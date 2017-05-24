@@ -27,7 +27,13 @@ class ViewController: UIViewController {
         if Username.text != "" && Password.text != "" {
             print("success")
         } else {
-            print("failed to log in")
+            let alert = UIAlertController(title: "Failed!", message: "Wrong username or password", preferredStyle: .alert)
+            let action1 = UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+                alert.dismiss(animated: true, completion: nil)
+            })
+            
+            alert.addAction(action1)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
